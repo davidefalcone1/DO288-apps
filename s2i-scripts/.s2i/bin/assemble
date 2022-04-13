@@ -9,10 +9,10 @@ echo "---> Enabling s2i support in httpd24 image"
 config_s2i
 
 ######## CUSTOMIZATION STARTS HERE ############
-cp -r src/ /opt/app-root/src
+cp -Rf /tmp/src/*.html .
 DATE=$(date +%Y-%m-%d)
-echo "Page built on date $DATE" > /opt/app-root/src/info.html
-echo "Strunz" >> /opt/app-root/src/info.html
+echo "Page built on date $DATE" > info.html
+echo "Strunz" >> info.html
 ######## CUSTOMIZATION ENDS HERE ############
 
 if [ -d ./httpd-cfg ]; then
